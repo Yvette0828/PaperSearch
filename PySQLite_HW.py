@@ -44,7 +44,6 @@ class TableModel(QtCore.QAbstractTableModel):
             else:
                 return None
 
-
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -149,9 +148,20 @@ class MainWindow(QtWidgets.QMainWindow):
         self.textBrowser_title.setText(self.df.iloc[mi.row(), col_list.index('Title')])
         self.textBrowser_fullContent.setText(self.df.iloc[mi.row(), col_list.index('PaperText')])
         self.img_name = u"./NIP2015_Images/" + self.df.iloc[mi.row(), col_list.index('imgfile')]
-        print(self.img_name)
+        # print(self.img_name)
         self.label_image.setPixmap(QPixmap(self.img_name))
         show_authors(self, self.df.iloc[mi.row(), 0])
+         # show the count of author(s)
+        Title = str(self.df.iloc[mi.row(), col_list.index('Title')])
+        sql = f"SELECT COUNT(AuthorId) FROM PaperAuthors WHERE PaperId = (SELECT Id FROM Papers WHERE Title = '{Title}')"
+        with self.conn:
+            author_count = SQLExecute(self, sql)
+            for i in author_count:
+                num = int(i[0])
+        if num == 1:
+            self.label_7.setText(f'Author: ({num} author)')
+        else:
+            self.label_7.setText(f'Authors: ({num} authors)')
 
     def GoogleScholar(self):
         title_text = self.textBrowser_title.toPlainText()

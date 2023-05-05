@@ -276,7 +276,7 @@
                 <item>
                  <widget class="QLabel" name="label_7">
                   <property name="text">
-                   <string>Authors</string>
+                   <string>Author(s)</string>
                   </property>
                  </widget>
                 </item>
@@ -456,41 +456,61 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_13">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_11" stretch="5,1">
+         <layout class="QVBoxLayout" name="verticalLayout_15">
           <item>
-           <widget class="QLabel" name="label_image">
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,1,1">
+           <layout class="QVBoxLayout" name="verticalLayout_11" stretch="5,1">
             <item>
-             <widget class="QPushButton" name="pushButton_paperSearch_Tab3">
+             <widget class="QLabel" name="label_image">
               <property name="text">
-               <string>Go to &quot;Paper Search&quot;</string>
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_FullContent_Tab3">
-              <property name="text">
-               <string>Go to &quot;Full Content&quot;</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_exit_Tab3">
-              <property name="text">
-               <string>Exit</string>
-              </property>
-             </widget>
+             <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,1,1">
+              <item>
+               <widget class="QPushButton" name="pushButton_paperSearch_Tab3">
+                <property name="text">
+                 <string>Go to &quot;Paper Search&quot;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_FullContent_Tab3">
+                <property name="text">
+                 <string>Go to &quot;Full Content&quot;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_exit_Tab3">
+                <property name="text">
+                 <string>Exit</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;Andale Mono&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Copyright © 2023 by Yvette</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
